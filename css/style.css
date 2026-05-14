@@ -21,6 +21,8 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--text); background: var(--surface); font-family: Inter, Arial, sans-serif; font-size: 16px; line-height: 1.5; }
 body.menu-open { overflow: hidden; }
+site-header, site-footer { display: block; }
+site-header { position: sticky; top: 0; z-index: 20; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
@@ -30,7 +32,7 @@ button, input, textarea { font: inherit; }
 .top-strip { background: var(--primary); color: var(--inverse); font-size: 14px; }
 .top-strip__inner { min-height: 36px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .top-strip a { font-weight: 700; }
-.site-header { position: sticky; top: 0; z-index: 20; background: var(--surface-lowest); border-bottom: 1px solid var(--border); }
+.site-header { background: var(--surface-lowest); border-bottom: 1px solid var(--border); }
 .nav-shell { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--primary-bright); font-family: "Hanken Grotesk", Inter, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.1; }
 .brand img { width: 56px; height: 56px; object-fit: contain; }
@@ -96,13 +98,6 @@ h3 { font-size: 24px; }
 .card-icon--gold { color: #5c4300; background: #ffdf9f; }
 .chip { display: inline-flex; margin-left: 10px; padding: 5px 10px; color: var(--primary); background: var(--primary-soft); border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .chip--gold { color: #5c4300; background: #ffdf9f; }
-.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 240px; gap: 24px; }
-.gallery-item { position: relative; margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-low); }
-.gallery-item--feature { grid-column: span 2; grid-row: span 2; }
-.gallery-item--tall { grid-row: span 2; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-.gallery-item:hover img { transform: scale(1.04); }
-.gallery-item figcaption { position: absolute; inset: auto 0 0; padding: 18px; color: var(--inverse); font-weight: 700; background: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); }
 .donations { background: var(--surface); }
 .donation-panel { padding: clamp(28px, 5vw, 56px); }
 .donation-copy { max-width: 900px; margin-inline: auto; }
@@ -155,8 +150,6 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     .section { padding-block: 72px; }
     .two-column, .donation-methods, .footer-grid { grid-template-columns: 1fr; }
     .action-card--image { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
-    .gallery-item--feature, .gallery-item--tall { grid-column: span 1; grid-row: span 1; }
     .footer-grid, .footer-grid > p { text-align: center; }
 }
 @media (max-width: 620px) {
@@ -342,19 +335,6 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     font-weight: 700;
 }
 
-.gallery-sections h2 {
-    margin-top: 0;
-}
-
-.gallery-sections h3 {
-    margin: 44px 0 18px;
-    color: var(--primary);
-}
-
-.gallery-grid--small {
-    grid-template-columns: repeat(2, 1fr);
-}
-
 .form-cta {
     margin-top: 30px;
     text-align: center;
@@ -381,8 +361,7 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
 
     .quick-grid,
     .officer-grid,
-    .directors-grid,
-    .gallery-grid--small {
+    .directors-grid {
         grid-template-columns: 1fr;
     }
 }
