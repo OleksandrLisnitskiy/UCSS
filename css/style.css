@@ -468,8 +468,6 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
 .story-card--home img {
     aspect-ratio: 4 / 3;
     object-fit: contain;
-    background: var(--surface-card);
-    padding: 10px;
 }
 
 .story-card--home .btn {

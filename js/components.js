@@ -56,7 +56,6 @@ class SiteFooter extends HTMLElement {
                         <a href="donations.html">Donations</a>
                     </nav>
                     <div class="footer-social" aria-label="Social links">
-                        <a class="social-icon social-icon--instagram" href="https://www.instagram.com/ucssedmonton/" target="_blank" rel="noopener" aria-label="Instagram"></a>
                         <a class="social-icon social-icon--facebook" href="https://www.facebook.com/ucssedmonton" target="_blank" rel="noopener" aria-label="Facebook"></a>
                     </div>
                     <p class="footer-copy">&copy; 2026 Ukrainian Canadian Social Services - Edmonton. All rights reserved.</p>
