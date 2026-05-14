@@ -5,7 +5,7 @@ class SiteHeader extends HTMLElement {
                 <div class="top-strip">
                     <div class="container top-strip__inner">
                         <a href="https://www.facebook.com/ucssedmonton" target="_blank" rel="noopener">Let's get connected on Facebook too</a>
-                        <span>СУСПІЛЬНА СЛУЖБА УКРАЇНЦІВ КАНАДИ, (ЕДМОНТОН)</span>
+                        <span>СУСПІЛЬНА СЛУЖБА УКРАЇНЦІВ КАНАДИ - ЕДМОНТОН</span>
                     </div>
                 </div>
                 <div class="container nav-shell">

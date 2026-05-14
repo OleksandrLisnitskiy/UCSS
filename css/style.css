@@ -550,6 +550,33 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     background: linear-gradient(90deg, var(--surface-lowest) 0 50%, var(--surface-low) 50% 100%);
 }
 
+.equity-section {
+    background: var(--surface-lowest);
+}
+
+.equity-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+    padding: 32px;
+    background: var(--surface-low);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.equity-card p:not(.eyebrow) {
+    max-width: 720px;
+    color: var(--muted);
+}
+
+.document-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
 /* Services contrast and imagery */
 .service-visual-band {
     background: var(--surface-lowest);
@@ -705,6 +732,14 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
 
     .membership-band {
         background: var(--surface-low);
+    }
+
+    .equity-card {
+        grid-template-columns: 1fr;
+    }
+
+    .document-actions {
+        justify-content: flex-start;
     }
 
     .footer-social,
