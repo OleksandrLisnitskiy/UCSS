@@ -501,6 +501,10 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     margin-top: 28px;
 }
 
+.mt-0 {
+    margin-top: 0 !important;
+}
+
 .info-grid,
 .resource-grid {
     display: grid;
