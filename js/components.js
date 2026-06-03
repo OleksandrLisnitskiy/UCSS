@@ -18,6 +18,7 @@ class SiteHeader extends HTMLElement {
                         <a href="index.html">Home</a>
                         <a href="about.html">About</a>
                         <a href="services.html">Services</a>
+                        <a href="useful-info.html">Useful Info</a>
                         <a href="index.html#contact">Contact Us</a>
                         <a class="nav-donate" href="donations.html">Donations</a>
                     </nav>
@@ -53,6 +54,7 @@ class SiteFooter extends HTMLElement {
                     <nav class="footer-nav" aria-label="Footer navigation">
                         <a href="about.html">About</a>
                         <a href="services.html">Services</a>
+                        <a href="useful-info.html">Useful Info</a>
                         <a href="donations.html">Donations</a>
                     </nav>
                     <div class="footer-social" aria-label="Social links">

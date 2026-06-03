@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    initTabs();
     initLanguageSwitch();
 });
 
@@ -51,12 +52,16 @@ const translationsUk = {
     'Home - Ukrainian Canadian Social Services - Edmonton': 'Головна - Суспільна служба українців Канади - Едмонтон',
     'About - Ukrainian Canadian Social Services - Edmonton': 'Про нас - Суспільна служба українців Канади - Едмонтон',
     'Services - Ukrainian Canadian Social Services - Edmonton': 'Послуги - Суспільна служба українців Канади - Едмонтон',
+    'Useful Info - Ukrainian Canadian Social Services - Edmonton': 'Корисна інформація - Суспільна служба українців Канади - Едмонтон',
     'Donations - Ukrainian Canadian Social Services - Edmonton': 'Пожертви - Суспільна служба українців Канади - Едмонтон',
     "Let's get connected on Facebook too": 'Долучайтеся до нас також у Facebook',
     'UCSS Edmonton': 'UCSS Edmonton',
     'Home': 'Головна',
     'About': 'Про нас',
     'Services': 'Послуги',
+    'Useful Info': 'Корисна інформація',
+    'Useful information for community members and newcomers.': 'Корисна інформація для членів громади та новоприбулих.',
+    'Translated reference information from the provided document, organized into bilingual tabs for easier access.': 'Перекладена довідкова інформація з наданого документа, організована у двомовні вкладки для зручнішого доступу.',
     'Contact Us': 'Контакти',
     'Donations': 'Пожертви',
     'Ukrainian Canadian Social Services - Edmonton': 'Суспільна служба українців Канади - Едмонтон',
@@ -244,6 +249,10 @@ function translatePage(lang) {
     document.title = lang === 'uk' && translationsUk[originalTitle] ? translationsUk[originalTitle] : originalTitle;
     document.documentElement.lang = lang === 'uk' ? 'uk' : 'en-CA';
 
+    document.querySelectorAll('[data-lang-content]').forEach((element) => {
+        element.hidden = element.dataset.langContent !== lang;
+    });
+
     document.querySelectorAll('.language-switch button').forEach((button) => {
         const active = button.dataset.lang === lang;
         button.classList.toggle('is-active', active);
@@ -264,4 +273,49 @@ function initLanguageSwitch() {
     });
 
     translatePage(currentLanguage());
+}
+
+function initTabs() {
+    document.querySelectorAll('[data-tabs]').forEach((tabRoot) => {
+        const buttons = Array.from(tabRoot.querySelectorAll('[role="tab"]'));
+        const panels = Array.from(tabRoot.querySelectorAll('[role="tabpanel"]'));
+        if (!buttons.length || !panels.length) return;
+
+        const activateTab = (buttonToActivate) => {
+            const targetId = buttonToActivate.getAttribute('aria-controls');
+
+            buttons.forEach((button) => {
+                const isActive = button === buttonToActivate;
+                button.setAttribute('aria-selected', String(isActive));
+                button.tabIndex = isActive ? 0 : -1;
+                button.classList.toggle('is-active', isActive);
+            });
+
+            panels.forEach((panel) => {
+                panel.hidden = panel.id !== targetId;
+            });
+        };
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => activateTab(button));
+
+            button.addEventListener('keydown', (event) => {
+                let nextIndex = index;
+
+                if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (index + 1) % buttons.length;
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (index - 1 + buttons.length) % buttons.length;
+                if (event.key === 'Home') nextIndex = 0;
+                if (event.key === 'End') nextIndex = buttons.length - 1;
+
+                if (nextIndex !== index) {
+                    event.preventDefault();
+                    buttons[nextIndex].focus();
+                    activateTab(buttons[nextIndex]);
+                }
+            });
+        });
+
+        const preselected = buttons.find((button) => button.getAttribute('aria-selected') === 'true') || buttons[0];
+        activateTab(preselected);
+    });
 }
