@@ -24,11 +24,15 @@ class SiteHeader extends HTMLElement {
                     </nav>
                     <div class="language-switch" aria-label="Language switcher">
                         <button type="button" data-lang="en" class="is-active">
-                            <span class="flag flag--svg" aria-hidden="true"><svg viewBox="0 0 60 40" focusable="false"><rect width="60" height="40" fill="#fff"/><rect width="15" height="40" fill="#d80621"/><rect x="45" width="15" height="40" fill="#d80621"/><path fill="#d80621" d="M30 4l2.1 7.1 4.2-4.5-.9 7.2 6.4-2.2-3.1 6.1 6.8 1.6-6.6 3.1 3.2 5.8-7.1-1.3.2 7.1-5.2-4.4-5.2 4.4.2-7.1-7.1 1.3 3.2-5.8-6.6-3.1 6.8-1.6-3.1-6.1 6.4 2.2-.9-7.2 4.2 4.5z"/></svg></span>
+                            <span class="flag" aria-hidden="true">
+                                <img src="images/flag-canada.svg" alt="">
+                            </span>
                             <span>EN</span>
                         </button>
                         <button type="button" data-lang="uk">
-                            <span class="flag flag--svg" aria-hidden="true"><svg viewBox="0 0 60 40" focusable="false"><rect width="60" height="20" fill="#0057b7"/><rect y="20" width="60" height="20" fill="#ffd700"/></svg></span>
+                            <span class="flag" aria-hidden="true">
+                                <img src="images/flag-ukraine.svg" alt="">
+                            </span>
                             <span>UA</span>
                         </button>
                     </div>
