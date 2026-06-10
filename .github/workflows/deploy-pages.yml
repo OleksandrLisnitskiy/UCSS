@@ -31,7 +31,7 @@ jobs:
       - name: Prepare site artifact
         run: |
           mkdir -p _site
-          cp -R about.html css donations.html images index.html js services.html useful-info.html _site/
+          cp -R about.html css donations.html images index.html js services.html useful-info.html volunteer-form.pdf _site/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
