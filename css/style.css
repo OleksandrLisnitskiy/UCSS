@@ -121,6 +121,11 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
 .contact-form input, .contact-form textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-lowest); }
 .contact-form input:focus, .contact-form textarea:focus { outline: 3px solid rgba(0, 102, 219, 0.18); border-color: var(--primary-bright); }
 .contact-form textarea { min-height: 150px; resize: vertical; }
+.contact-form__botcheck { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
+.contact-form__status { min-height: 24px; margin: 4px 0 0; font-weight: 600; }
+.contact-form__status.is-success { color: #1f7a3d; }
+.contact-form__status.is-error { color: #b42318; }
+.contact-form button[disabled] { opacity: 0.7; cursor: wait; }
 .site-footer { background: #2d3135; color: #eef1f6; padding-block: 48px; }
 .footer-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
 .brand--footer { color: var(--gold); }

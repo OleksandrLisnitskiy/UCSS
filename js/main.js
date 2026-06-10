@@ -37,10 +37,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (event) => {
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const statusElement = document.getElementById('contact-form-status');
+        const accessKeyInput = document.getElementById('web3forms-access-key');
+
+        contactForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            alert(currentLanguage() === 'uk' ? 'Дякуємо за ваше повідомлення! Це демонстраційна форма.' : 'Thank you for your message! This is a demo form.');
-            contactForm.reset();
+
+            if (!contactForm.reportValidity()) return;
+
+            const accessKey = accessKeyInput?.value.trim();
+            if (!accessKey || accessKey === 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY') {
+                setContactFormStatus(
+                    statusElement,
+                    currentLanguage() === 'uk'
+                        ? 'Форму ще не налаштовано. Додайте ключ доступу Web3Forms, щоб отримувати повідомлення.'
+                        : 'This form is not configured yet. Add the Web3Forms access key to start receiving messages.',
+                    'error'
+                );
+                return;
+            }
+
+            const formData = new FormData(contactForm);
+            const payload = Object.fromEntries(formData.entries());
+
+            if (!payload.subject) {
+                payload.subject = currentLanguage() === 'uk'
+                    ? 'Нове повідомлення з сайту UCSS Edmonton'
+                    : 'New message from the UCSS Edmonton website';
+            }
+
+            setContactFormStatus(
+                statusElement,
+                currentLanguage() === 'uk' ? 'Надсилаємо повідомлення...' : 'Sending your message...',
+                null
+            );
+            if (submitButton) submitButton.disabled = true;
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    setContactFormStatus(
+                        statusElement,
+                        currentLanguage() === 'uk'
+                            ? 'Дякуємо. Ваше повідомлення надіслано.'
+                            : 'Thank you. Your message has been sent.',
+                        'success'
+                    );
+                    contactForm.reset();
+                } else {
+                    setContactFormStatus(
+                        statusElement,
+                        result.message || (currentLanguage() === 'uk'
+                            ? 'Не вдалося надіслати повідомлення. Спробуйте ще раз пізніше.'
+                            : 'We could not send your message. Please try again later.'),
+                        'error'
+                    );
+                }
+            } catch (error) {
+                console.error('Contact form submission failed:', error);
+                setContactFormStatus(
+                    statusElement,
+                    currentLanguage() === 'uk'
+                        ? 'Сталася помилка мережі. Спробуйте ще раз пізніше.'
+                        : 'A network error occurred. Please try again later.',
+                    'error'
+                );
+            } finally {
+                if (submitButton) submitButton.disabled = false;
+            }
         });
     }
 
@@ -213,6 +288,14 @@ const translationsUk = {
 
 function currentLanguage() {
     return localStorage.getItem('ucss-language') || 'en';
+}
+
+function setContactFormStatus(element, message, tone) {
+    if (!element) return;
+    element.textContent = message;
+    element.classList.remove('is-success', 'is-error');
+    if (tone === 'success') element.classList.add('is-success');
+    if (tone === 'error') element.classList.add('is-error');
 }
 
 function preserveSpacing(original, translated) {

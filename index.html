@@ -79,13 +79,17 @@
                     </dl>
                     <iframe loading="lazy" src="https://maps.google.com/maps?q=11717%20%E2%80%93%2097th%20Street%2C%20Edmonton%2C%20AB%2C%20T5G%201Y3&t=m&z=11&output=embed&iwloc=near" title="11717 - 97th Street, Edmonton, AB, T5G 1Y3" aria-label="11717 - 97th Street, Edmonton, AB, T5G 1Y3"></iframe>
                 </div>
-                <form class="contact-form" id="contact-form" action="#" method="post">
+                <form class="contact-form" id="contact-form" method="post" novalidate>
                     <h3>Send us a message</h3>
+                    <input id="web3forms-access-key" name="access_key" type="hidden" value="b00fee38-919b-4995-b3ca-940b83e1df99">
+                    <input name="from_name" type="hidden" value="UCSS Edmonton Website">
+                    <input name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" class="contact-form__botcheck" aria-hidden="true">
                     <label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required>
                     <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required>
                     <label for="subject">Subject</label><input id="subject" name="subject" type="text">
                     <label for="message">Message</label><textarea id="message" name="message" required></textarea>
                     <button class="btn btn--primary" type="submit">Send Message</button>
+                    <p class="contact-form__status" id="contact-form-status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
