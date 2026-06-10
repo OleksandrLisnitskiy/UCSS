@@ -980,7 +980,7 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
 }
 
 .membership-band {
-    background: linear-gradient(90deg, var(--surface-lowest) 0 50%, var(--surface-low) 50% 100%);
+    background: var(--surface-lowest);
 }
 
 .equity-section {
