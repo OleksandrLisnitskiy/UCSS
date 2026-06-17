@@ -606,6 +606,51 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     color: var(--text);
 }
 
+.legal-resource-link {
+    margin-top: 14px;
+    padding: 13px 18px;
+    justify-content: flex-start;
+    width: fit-content;
+    max-width: 100%;
+    color: var(--text);
+    background: #f3f7fd;
+    border: 1px solid rgba(0, 63, 135, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 63, 135, 0.06);
+}
+
+.legal-resource-link .material-symbols-outlined {
+    display: inline-grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    color: var(--primary);
+    background: rgba(0, 102, 219, 0.08);
+    border-radius: 999px;
+    flex-shrink: 0;
+    font-size: 18px;
+}
+
+.legal-resource-link:hover,
+.legal-resource-link:focus-visible {
+    color: var(--text);
+    background: #edf4ff;
+    border-color: rgba(0, 102, 219, 0.24);
+    box-shadow: 0 8px 18px rgba(0, 63, 135, 0.1);
+    transform: translateY(-1px);
+}
+
+.legal-resource-link:hover .material-symbols-outlined,
+.legal-resource-link:focus-visible .material-symbols-outlined {
+    transform: translateX(2px);
+}
+
+@media (max-width: 640px) {
+    .legal-resource-link {
+        width: fit-content;
+    }
+}
+
 .inline-note {
     padding: 16px 18px;
     color: #5c4300;
@@ -694,12 +739,38 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     border-bottom: 0;
 }
 
+.school-table th:last-child,
+.school-table td:last-child {
+    text-align: right;
+}
+
+.school-table__link-cell {
+    white-space: nowrap;
+}
+
+.school-table__link {
+    margin-top: 0;
+    padding: 10px 14px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+.school-table__link .material-symbols-outlined {
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+}
+
 .school-card {
     padding: 24px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 248, 255, 0.98));
     border: 1px solid rgba(0, 63, 135, 0.08);
     border-radius: 24px;
     box-shadow: 0 16px 30px rgba(0, 45, 99, 0.06);
+}
+
+.school-card__link {
+    margin-top: 18px;
 }
 
 .school-card h3 {
@@ -754,6 +825,14 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     .school-table td {
         padding: 8px 0;
         border: 0;
+    }
+
+    .school-table td:last-child {
+        text-align: left;
+    }
+
+    .school-table__link {
+        margin-top: 6px;
     }
 }
 

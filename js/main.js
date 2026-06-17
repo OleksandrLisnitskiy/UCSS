@@ -256,7 +256,7 @@ const translationsUk = {
     'Information on immigration procedures and government information': 'Інформація про імміграційні процедури та державні ресурси',
     'Referrals to immigration specialists and lawyers': 'Скерування до імміграційних спеціалістів та юристів',
     'Official Canada Immigration website': 'Офіційний сайт імміграції Канади',
-    'Helpful resources from the original UCSS Services page': 'Корисні ресурси з оригінальної сторінки Services UCSS',
+    'Other Useful Links': 'Інші Корисні Посилання',
     'These links connect community members to housing, employment, education, health, immigration, seniors, family, and community resources': 'Ці посилання допомагають членам громади знайти ресурси щодо житла, працевлаштування, освіти, здоров’я, імміграції, підтримки людей старшого віку, сім’ї та громади',
     'Language Instruction for Newcomers': 'Мовне навчання для новоприбулих',
     'Find a daycare': 'Знайти дитячий садок',
