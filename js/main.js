@@ -225,7 +225,7 @@ const translationsUk = {
     'English PDF': 'Англійський PDF',
     'Ukrainian PDF': 'Український PDF',
     'How we serve our community': 'Як ми служимо нашій громаді',
-    'Settlement, community, and immigration services based on the current UCSS Edmonton Services page': 'Послуги з облаштування, підтримки громади та імміграції, підготовлені на основі чинної сторінки Services UCSS Edmonton',
+    'Settlement, community, and immigration services': 'Послуги з облаштування, підтримки громади та імміграції',
     'Settlement Services': 'Послуги з облаштування',
     'UCSS provides guidance and advice for newcomers settling in Edmonton and Alberta': 'UCSS надає поради та супровід новоприбулим, які облаштовуються в Едмонтоні та Альберті',
     'Finding rental residences or learning how to purchase real estate': 'Пошук орендованого житла або інформація про купівлю нерухомості',
