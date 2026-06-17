@@ -328,6 +328,37 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     padding-left: 20px;
 }
 
+.programs-photo {
+    height: auto;
+    max-height: 420px;
+}
+
+.programs-grid {
+    margin-top: 28px;
+}
+
+.program-card {
+    padding: 24px;
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.program-card h3 {
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.program-card p,
+.programs-note {
+    color: var(--muted);
+}
+
+.programs-note {
+    margin: 28px 0 0;
+    font-weight: 600;
+}
+
 .tabs-shell {
     display: grid;
     gap: 28px;
