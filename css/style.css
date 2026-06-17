@@ -333,6 +333,16 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     max-height: 420px;
 }
 
+.programs-image-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.programs-image-row .programs-photo {
+    margin: 22px 0 0;
+}
+
 .programs-grid {
     margin-top: 28px;
 }
@@ -903,6 +913,10 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     .service-detail--wide,
     .directors-card {
         grid-column: auto;
+    }
+
+    .programs-image-row {
+        grid-template-columns: 1fr;
     }
 }
 
