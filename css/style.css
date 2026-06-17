@@ -175,9 +175,13 @@ iframe { width: 100%; min-height: 320px; border: 1px solid var(--border); border
     max-width: 880px;
 }
 
+.page-hero .eyebrow {
+    color: var(--inverse);
+}
+
 .page-hero p:not(.eyebrow) {
     max-width: 720px;
-    color: #eef1f6;
+    color: var(--inverse);
     font-size: 18px;
 }
 
