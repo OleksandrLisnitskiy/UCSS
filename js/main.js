@@ -141,7 +141,7 @@ const translationsUk = {
     'Donations': 'Пожертви',
     'Ukrainian Canadian Social Services - Edmonton': 'Ukrainian Canadian Social Services - Edmonton',
     'Supporting our community together': 'Підтримуємо нашу громаду разом',
-    'UCSS is dedicated to helping those who are unable to help themselves. As a non-profit charitable organization, UCSS responds to the needs and interests of the Ukrainian community and individuals through a wide range of services': 'UCSS допомагає тим, хто не може впоратися самостійно. Як неприбуткова благодійна організація, UCSS реагує на потреби та інтереси української громади й окремих людей, надаючи широкий спектр послуг',
+    'UCSS is a non-profit charitable organization dedicated to helping people who need support. It responds to the needs and interests of the Ukrainian community and individuals by providing a wide range of programs and services.': 'Суспільна Служба Українців Канади присвячує свою діяльність підтримці осіб, які потребують допомоги. Як неприбуткова благодійна організація, Служба реагує на потреби та інтереси української громади й окремих осіб, надаючи широкий спектр програм, послуг і ресурсів.',
     'Make a Donation': 'Зробити пожертву',
     'Learn how we can help': 'Дізнатися, як ми можемо допомогти',
     'Learn more about': 'Дізнайтеся більше про',
