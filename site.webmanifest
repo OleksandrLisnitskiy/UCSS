@@ -1,0 +1,19 @@
+{
+    "name": "Ukrainian Canadian Social Services (Edmonton)",
+    "short_name": "UCSS Edmonton",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "230x230",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "230x230",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
