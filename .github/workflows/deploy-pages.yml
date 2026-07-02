@@ -44,6 +44,8 @@ jobs:
             donations.html \
             services.html \
             useful-info.html \
+            robots.txt \
+            sitemap.xml \
             apple-touch-icon.png \
             favicon.png \
             site.webmanifest \

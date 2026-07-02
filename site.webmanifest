@@ -3,12 +3,12 @@
     "short_name": "UCSS Edmonton",
     "icons": [
         {
-            "src": "/favicon.png",
+            "src": "favicon.png",
             "sizes": "230x230",
             "type": "image/png"
         },
         {
-            "src": "/apple-touch-icon.png",
+            "src": "apple-touch-icon.png",
             "sizes": "230x230",
             "type": "image/png"
         }
